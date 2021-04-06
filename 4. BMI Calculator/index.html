@@ -1,27 +1,21 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <script src=bmi.js"></script>
-    <link rel="stylesheet" href="style.css">
-
-    <!-- Boot strap -->
-    <meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-	<script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
-	<link rel="stylesheet" href="https://m.w3newbie.com/you-tube.css">
+    <script src="bmi.js"></script>
 </head>
 <body>
     <h1>BMI - Calculator</h1>
-    <form name="bmiForm" onsubmit="return validateForm()" method="post">
+
+    <form name="bmiForm"  enctype="multipart/form-data" onsubmit="return validateForm();" >
         Your weight: <input type="text" name="tb_weight"> kg
         <br/>
         Your height: <input type="text" name="tb_height"> m
         <br/>
         <input type="submit" value="Submit">
     </form>
+
+    <h3>Your BMI </h3>
+    <h2 id="bmi">-</h2>
+
 </body>
 </html>
