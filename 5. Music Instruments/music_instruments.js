@@ -66,18 +66,6 @@ var instruments = [
     new Flute(8, 'Wood'),
 ];
 
-function playHarp() {
-    instruments[0].play();
-}
-function playGuitar() {
-    instruments[1].play();
-}
-function playSaxophone() {
-    instruments[2].play();
-}
-function playFlute() {
-    instruments[3].play();
-}
 function getAllPropertiesOfInstruments() {
     document.getElementById("propertiesTag").innerHTML = JSON.stringify(instruments);
     
