@@ -10,22 +10,29 @@ class Instrument{
 }
 class Stringed extends Instrument {
     constructor(numberOfStrings){
-        super("Stringed");
         this.numberOfStrings = numberOfStrings;
     }
 }
 
 class Harp extends Instrument{
     constructor(height){
-        super(47);
+        super("Harp", 47);
         this.height = height;
+    }
+    play()
+    {
+        super.play("Sound/Harp.wav");
     }
 }
 
 class Guitar extends Instrument{
     constructor(material){
-        super(6);
+        super("Guitar", 6);
         this.material = material;
+    }
+    play()
+    {
+        super.play("Sound/Guitar.wav");
     }
 }
 
@@ -33,6 +40,10 @@ class Saxophone extends Instrument{
     constructor(material){
         super("Saxophone");
         this.material = material;
+    }
+    play()
+    {
+        super.play("Sound/Saxophone.wav");
     }
 }
 
@@ -48,9 +59,26 @@ class Flute extends Instrument {
     }
 }
 
+var instruments = [
+    new Harp('1.5 m'),
+    new Guitar('Wood'),
+    new Saxophone('Brass'),
+    new Flute(8, 'Wood'),
+];
 
-var flute = new Flute(78, 'Wood');
-
+function playHarp() {
+    instruments[0].play();
+}
+function playGuitar() {
+    instruments[1].play();
+}
+function playSaxophone() {
+    instruments[2].play();
+}
 function playFlute() {
-    flute.play();
+    instruments[3].play();
+}
+function getAllPropertiesOfInstruments() {
+    document.getElementById("propertiesTag").innerHTML = JSON.stringify(instruments);
+    
 }

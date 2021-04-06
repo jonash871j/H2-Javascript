@@ -3,10 +3,15 @@
 <head>
     <script src="music_instruments.js"></script>
 </head>
-<body>
+<body onload="getAllPropertiesOfInstruments()">
     <h1>Music Instruments</h1>
 
-    <button type="button" onclick="PlayFlute();">Click me</button>
+    <p id="propertiesTag">-</p>
+
+    <button type="button" onclick="playHarp();">Play harp</button>
+    <button type="button" onclick="playGuitar();">Play guitar</button>
+    <button type="button" onclick="playSaxophone();">Play saxophone</button>
+    <button type="button" onclick="playFlute();">Play flute</button>
 
 </body>
 </html>
