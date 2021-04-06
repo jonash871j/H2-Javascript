@@ -6,9 +6,10 @@ function steal(balance, amount){
     if(amount < balance){
         balance = balance - amount; // Det havde været pænerer med: balance -= amount;
     }
-    return amount; // Retunerer noget før at alt koden er kørt igennem
+    return amount;  // Det havde måske været smarter at retunere balance som bliver ændret lokalt i stedet for amount som ikke ændres
+                    // Retunerer noget før at alt koden er kørt igennem
     cameraOn= true; // Linjen bliver aldrig kørt
 }
 
 var amount = steal(balance, 1250);
-alert("Du er kriminel og du har lige stjålet " + amount +" og det må manikke!!!!") // Typo: manikke 
+alert("Du er kriminel og du har lige stjålet " + amount +" og det må manikke!!!!") // Der kommer til at stå 1250 i beskeden i stedet for det forventede 9250
