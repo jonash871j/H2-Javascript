@@ -5,6 +5,12 @@ class Card{
         this.isSelected = false;
         this.isFound = false;
     }
+    selectCard()
+    {
+        if (!this.isFound){
+            this.isSelected = true;
+        }
+    }
 }
 
 class Board
@@ -51,6 +57,36 @@ class GameManager{
         this.board = new Board(cardAmount);
     }
 
+    logic(){
+        var card1 = null;
+        var card2 = null;
+        
+        for (var i = 0; i < this.board.cards.length; i++){
+            var card = this.board.cards;
+            console.log(card);
+            if (card.isSelected == true){
+      
+                if (card1 == null){
+                    card1 = card;
+                    
+
+                }
+                else{
+                    card2 = card;
+                    break;
+                }
+            }
+        }
+        if (card1 != null && (card2 != null))
+        {
+            if (card1.value == card2.value){
+                card1.isFound = true;
+                card2.isFound = true;
+            }
+            card1.isSelected = false;
+            card2.isSelected = false;
+        }
+    }
 }
 
 var game;
@@ -61,21 +97,20 @@ function initGame(cardAmount) {
 
     updateGame();
 
-    var cardIndex = 0;
-    cellElements = document.querySelectorAll('[data-cell]');
-    cellElements.forEach(cell => {
-        cell.addEventListener('click', handleClick, {once: false});
-        cell.classList.add("card:" + game.board.cards[cardIndex]);
-        cardIndex++;
-    })
+
 }
 
 function handleClick(e) {
-    console.log(e.target.classList);
+    var card = game.board.cards[e.target.value];
+    card.selectCard();
+    game.logic();
+    updateGame();
 }
 
 function updateGame() {
+
     var boardElement = document.getElementById("boardId");
+    boardElement.innerHTML = "";
 
     for (var i = 0; i < game.cardAmount; i++){
         var card = game.board.cards[i];
@@ -90,4 +125,12 @@ function updateGame() {
 
         boardElement.innerHTML += "<div class=\"cell\" data-cell>" + cardText + "</div>";
     }
+
+    var cardIndex = 0;
+    cellElements = document.querySelectorAll('[data-cell]');
+    cellElements.forEach(cell => {
+        cell.addEventListener('click', handleClick, {once: false});
+        cell.value = cardIndex;
+        cardIndex++;
+    })
 }
