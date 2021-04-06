@@ -65,7 +65,7 @@ function initGame(cardAmount) {
     cellElements = document.querySelectorAll('[data-cell]');
     cellElements.forEach(cell => {
         cell.addEventListener('click', handleClick, {once: false});
-        cell.classList.add(cardIndex);
+        cell.classList.add("card:" + game.board.cards[cardIndex]);
         cardIndex++;
     })
 }

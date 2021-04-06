@@ -10,13 +10,14 @@ class Instrument{
 }
 class Stringed extends Instrument {
     constructor(numberOfStrings){
+        super("Stringed")
         this.numberOfStrings = numberOfStrings;
     }
 }
 
-class Harp extends Instrument{
+class Harp extends Stringed{
     constructor(height){
-        super("Harp", 47);
+        super(47);
         this.height = height;
     }
     play()
@@ -25,9 +26,9 @@ class Harp extends Instrument{
     }
 }
 
-class Guitar extends Instrument{
+class Guitar extends Stringed{
     constructor(material){
-        super("Guitar", 6);
+        super(6);
         this.material = material;
     }
     play()
