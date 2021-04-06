@@ -8,6 +8,7 @@ function steal(balance, amount){
     }
     return amount;  // Det havde måske været smarter at retunere balance som bliver ændret lokalt i stedet for amount som ikke ændres
                     // Retunerer noget før at alt koden er kørt igennem
+                    // Tyven bliver også snydt, da han stjæler fra et lokalt variabel og ikke fra det globale balance variabel
     cameraOn= true; // Linjen bliver aldrig kørt
 }
 
