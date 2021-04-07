@@ -1,0 +1,34 @@
+body{
+    margin: 0;
+    background: black;
+    color: white;
+    font-family: 'Informal Roman';
+    background-image: url("Image/wood.jpg");
+    background-;
+}
+
+h1{
+    margin: 0;
+    font-size: 80px;
+    text-align: center;
+}
+
+#gameCanvas{
+    z-index: 1;
+    padding: 0;
+    margin: auto;
+    display: block;
+}
+#fireworkCanvas{
+    z-index: 2;
+    margin: 0;
+    background-color: transparent;
+    position:absolute;
+    pointer-events: none; 
+}
+
+#gameUi{
+    margin-left: 16px;
+    width: 400px;
+    position: absolute;
+}
