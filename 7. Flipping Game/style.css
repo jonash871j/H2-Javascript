@@ -1,0 +1,39 @@
+body{
+    margin: 0;
+    background: black;
+    color: white;
+    font-family: 'Informal Roman';
+}
+
+h1{
+    margin: 0;
+    font-size: 80px;
+    text-align: center;
+}
+.board{
+
+    width: 100vw;
+    height: 75vh;
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    grid-template-columns: repeat(8, auto);
+}
+
+.card{
+    width: 100px;
+    height: 100px;
+    outline: 2px solid #222222;
+    background-color: #000055;
+    margin-top: 1px;
+    margin-left: 1px;
+    text-align: center;
+    font-size: 56px;
+}
+
+
+#gameUi{
+    margin-left: 16px;
+    width: 400px;
+    position: absolute;
+}
