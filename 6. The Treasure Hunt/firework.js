@@ -64,11 +64,7 @@ class FireworkManager{
         this.canvas.height = window.innerHeight;
 
         var self = this;
-        this.treasuremap = new Image();
-        this.treasuremap.src = "Image/treasuremap.png";
-        this.treasuremap.onload = function() {
-            setInterval(function(){self.updateCanvas();}, 25)
-        }
+		setInterval(function(){self.updateCanvas();}, 25);
     }
 
     updateCanvas() {
